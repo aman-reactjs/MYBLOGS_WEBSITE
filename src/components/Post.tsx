@@ -79,7 +79,7 @@ const Posts: React.FC = () => {
       <h1 className="text-4xl font-bold text-center mb-10">Latest Posts</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {posts.map((post) => (
-          <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+          <div key={post.id} className=" bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
             <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
             <div className="p-4">
               <h2 className="text-xl font-semibold text-gray-800">{post.title}</h2>
