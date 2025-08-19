@@ -14,9 +14,9 @@ const Footer = () => {
         <div>
           {/* Logo */}
           <img
-            src="https://www.everythingtalent.ai/_next/static/media/acme-logo-dark.d4da7bf2.png"
+            src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Facme-logo-dark.d4da7bf2.png&w=256&q=75"
             alt="Everything Talent Logo"
-            className="h-10 mb-4"
+            className="h-30 mx-4 "
           />
           {/* Brand Name */}
           <h2 className="text-xl font-semibold mb-2">Everything Talent</h2>
@@ -26,7 +26,7 @@ const Footer = () => {
             accurate recruitment
           </p>
           {/* Social Icons */}
-          <div className="flex gap-4 mt-4 text-white">
+          <div className="flex gap-4 mt-4 mx-4 text-white">
             <a href="#" className="hover:text-gray-300">
               <FaTwitter />
             </a>
@@ -80,17 +80,23 @@ const Footer = () => {
             <li><a href="#">CCPA Compliance</a></li>
           </ul>
         </div>
+        {/* <div className="  flex justify-end items-center min-h-20 bg-black-300">
+  <h1 className ="text-5xl font-extrabold uppercase bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text 
+             drop-shadow-[2px_2px_0_#a100f2] hover:drop-shadow-[5px_5px_0_#ff3cac] transition duration-300">
+    EVERYTHINGTALENT.AI
+  </h1>
+</div> */}
       </div>
     </footer>
      <div className="w-full flex justify-center bg-black py-4">
         <img
-          src="myImage.png"
+          src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
           alt="Company Logo"
-          className="h-50 w-[80vw]"
+          className="h-100 w-[100vw]"
         />
       </div>
 
-      <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4 flex justify-center items-center bg-black text-white border-t-5 border-blue-950">
+      <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4 flex justify-center items-center bg-black text-white border-t-5 border-purple-950">
         <aside>
           <p>
             Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd

@@ -2,8 +2,8 @@
 import Featured from "@/components/Featured";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import Post from "@/components/Post";
 import PostSlider from "@/components/PostSlider";
+import RecentBlog from "@/components/RecentBlog";
 
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
              <PostSlider />
              <Hero/>
           <Featured/>
-             <Post/>
+          <RecentBlog/>
              <Footer/>
     </main>
   )
