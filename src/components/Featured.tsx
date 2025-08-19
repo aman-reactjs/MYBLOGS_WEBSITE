@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Post from "./Post";
@@ -19,13 +20,11 @@ const Featured = () => {
     >
       {/* 🔳 Grid Background with Center Fade */}
       <div
-        className={`absolute inset-0 -z-20 h-full w-full bg-[size:14px_24px] 
-        ${
+        className={`absolute inset-0 -z-20 h-full w-full bg-[size:14px_24px] ${
           isDark
             ? "bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)]"
             : "bg-[linear-gradient(to_right,#00000022_1px,transparent_1px),linear-gradient(to_bottom,#00000022_1px,transparent_1px)]"
-        } 
-        [mask-image:radial-gradient(ellipse_at_center,white,transparent)]`}
+        } [mask-image:radial-gradient(ellipse_at_center,white,transparent)]`}
       />
 
       {/* 🌀 Decorative Curved Line */}
@@ -46,16 +45,10 @@ const Featured = () => {
         </svg>
       </div>
 
-      {/* 🌟 Main Content with Conditional Pink Background */}
-      <div
-        className={`z-20 flex flex-col items-center text-center px-4 sm:px-6 md:px-8 max-w-4xl ${
-          !isDark
-            ? "bg-[linear-gradient(to_right,transparent,theme(colors.pink.200),transparent)]"
-            : ""
-        }`}
-      >
+      {/* 🌟 Main Content */}
+      <div className="relative z-20 flex flex-col items-center text-center px-4 sm:px-6 md:px-8 max-w-4xl">
         {/* Icon + Label */}
-        <div className="relative mb-6 mx-6">
+        <div className="relative mb-6">
           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-fuchsia-500 via-blue-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-purple-400/30 animate-pulse">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +66,7 @@ const Featured = () => {
             </svg>
           </div>
           <p
-            className={`text-xs sm:text-sm font-medium mt-2 px-2 rounded-lg ${
+            className={`text-xs sm:text-sm font-medium mt-2 px-3 py-1 rounded-lg shadow ${
               isDark
                 ? "text-white bg-gradient-to-r from-[#1a093d] to-[#0f051d]"
                 : "text-black bg-gradient-to-r from-[#e0d7fa] to-[#e9e2f8]"
@@ -93,16 +86,15 @@ const Featured = () => {
 
         {/* Subtitle */}
         <p
-          className={`max-w-2xl text-sm sm:text-base md:text-lg ${
+          className={`max-w-2xl text-sm sm:text-base md:text-lg mt-2 ${
             isDark ? "text-gray-300" : "text-gray-700"
           }`}
         >
-          Insights on AI hiring, machine learning in assessments, and next-gen
-          recruitment.
+          Insights on AI hiring, machine learning in assessments, and next-gen recruitment.
         </p>
 
-        {/* Blog Posts */}
-        <div className="mt-8 w-full">
+        {/* Posts */}
+        <div className="mt-10 w-full">
           <Post />
         </div>
       </div>

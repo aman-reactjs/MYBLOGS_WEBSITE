@@ -4,7 +4,14 @@ import React from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
 
-const blogs = [
+interface Blog {
+  title: string;
+  date: string;
+  readTime: string;
+  image: string;
+}
+
+const blogs: Blog[] = [
   {
     title: "The Importance of AI in Modern Recruitment",
     date: "28 May, 2024",
@@ -28,7 +35,7 @@ const blogs = [
   },
 ];
 
-const BlogCard = ({ blog }) => (
+const BlogCard: React.FC<{ blog: Blog }> = ({ blog }) => (
   <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md overflow-hidden w-full max-w-xs hover:shadow-lg transition-shadow duration-300">
     <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover" />
     <div className="p-4 w-full bg-gray-100 dark:bg-gray-800 h-40 grid items-end">
@@ -38,7 +45,7 @@ const BlogCard = ({ blog }) => (
       <p className="text-xs text-gray-500 dark:text-gray-300 mt-1 flex justify-between items-center">
         <img
           src="https://www.everythingtalent.ai/_next/image?url=%2Flogos%2Facme-logo-light.png&w=32&q=75"
-          alt=""
+          alt="Author logo"
         />
         <span className="relative right-10">EverythingTalent Team</span>
         <span className="text-gray-700 dark:text-gray-300">{blog.readTime}</span>
@@ -48,17 +55,17 @@ const BlogCard = ({ blog }) => (
   </div>
 );
 
-const NewsletterBox = () => (
-  <div className="relative rounded-xl p-6 text-center w-250  mx-auto mt-12 bg-white dark:bg-gray-900 shadow-md overflow-hidden flex justify-between items-center">
+const NewsletterBox: React.FC = () => (
+  <div className="relative rounded-xl p-6 text-center max-w-2xl mx-auto mt-12 bg-white dark:bg-gray-900 shadow-md overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-4">
     <div className="absolute -top-8 -left-8 w-32 h-32 bg-gradient-to-br from-purple-300 via-purple-100 to-transparent rounded-full opacity-40 blur-3xl"></div>
     <h2 className="font-semibold text-lg z-10 relative text-gray-800 dark:text-white">
-      Receive the latest Newsletter <span className="text-purple-600"> updates</span>.
+      Receive the latest Newsletter <span className="text-purple-600">updates</span>.
     </h2>
-    <div className="mt-4 flex items-center justify-center gap-2 relative z-10">
+    <div className="flex items-center justify-center gap-2 relative z-10 w-full sm:w-auto">
       <input
         type="email"
         placeholder="Enter your email"
-        className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-black dark:text-white w-2/3"
+        className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-black dark:text-white w-full sm:w-64"
       />
       <button className="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-gray-800">
         Subscribe
@@ -67,10 +74,10 @@ const NewsletterBox = () => (
   </div>
 );
 
-const CTABox = () => (
+const CTABox: React.FC = () => (
   <div className="bg-gradient-to-br from-[#050505] to-[#1e1e1e] text-white rounded-xl p-6 mt-12 w-full max-w-4xl mx-auto text-center shadow-lg">
     <p className="text-xl font-bold">
-      Reach for the <span className="text-purple-400">Stars</span> in {" "}
+      Reach for the <span className="text-purple-400">Stars</span> in{" "}
       <span className="text-green-400">Talent</span>
     </p>
     <p className="text-sm mt-2 max-w-xl mx-auto">
@@ -87,7 +94,7 @@ const CTABox = () => (
   </div>
 );
 
-const RecentBlog = () => {
+const RecentBlog: React.FC = () => {
   const { theme } = useTheme();
 
   return (
