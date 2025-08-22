@@ -109,7 +109,7 @@ const Posts: React.FC = () => {
     className="w-5 h-5 rounded-full"
   />
   
-  <span className="relative mr-23">
+  <span className="relative mr-23 text-[13px]">
     EverythingTalent Team
   </span>
 
@@ -132,7 +132,7 @@ const Posts: React.FC = () => {
     {post.time}
   </span>
 </p>
-
+<p className='text-gray-700 text-[13px] my-5'>{post.date}</p>
               </div>
             </div>
           </div>
