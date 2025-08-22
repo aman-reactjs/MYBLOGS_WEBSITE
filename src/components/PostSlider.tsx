@@ -53,9 +53,7 @@ const PostSlider = () => {
             {/* Gradient Border Wrapper */}
             <div className="relative rounded-2xl p-[2px] bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-300 transition-all duration-300">
               {/* Inner Card (light/dark) */}
-                {/* Inner Card (light/dark) */}
-             
-              <div className="bg-gray-100 dark:dark:bg-gradient-to-r from-[#1b0058] via-[#2a006d] to-[#0a155b] rounded-2xl overflow-hidden">
+              <div className="bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden">
                 <div className="flex flex-col-reverse md:flex-row min-h-[80vh]">
                   {/* Text Section */}
                   <div className="flex-1 flex items-center justify-center bg-[linear-gradient(to_right,#ffe4e6,transparent)] dark:bg-[linear-gradient(to_right,#1f2937,transparent)] p-6 sm:p-10">

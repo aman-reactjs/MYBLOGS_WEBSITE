@@ -136,7 +136,7 @@ const RecentBlog: React.FC = () => {
   const isDark = theme === "dark";
 
   return (
-    <section className="py-20 px-4 text-center relative overflow-hidden dark:bg-gradient-to-br dark:from-[#0c0023] dark:via-[#0b0a30] dark:to-[#000018] ">
+    <section className="py-20 px-4 text-center relative overflow-hidden bg-white dark:bg-[#04091a]">
       {/* Background grid pattern */}
       <div className="absolute inset-0 h-full w-full z-0">
         <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_2px)] dark:bg-[radial-gradient(#1f1f1f_1px,transparent_5px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_110%)]"></div>
@@ -163,7 +163,7 @@ const RecentBlog: React.FC = () => {
             strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-            // className={`lucide lucide-rss-icon h-6 w-6 ${isDark ? "text-white" : "text-black"}`}
+            className={`lucide lucide-rss-icon h-6 w-6 ${isDark ? "text-white" : "text-black"}`}
           >
             <path d="M4 11a9 9 0 0 1 9 9" />
             <path d="M4 4a16 16 0 0 1 16 16" />

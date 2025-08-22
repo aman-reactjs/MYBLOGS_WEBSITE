@@ -103,24 +103,36 @@ const Posts: React.FC = () => {
                   {post.title}
                 </h2>
                 <p className="text-[15px] text-gray-500 dark:text-gray-300 mt-1 flex justify-between items-center">
-                  <img
-                    src="https://www.everythingtalent.ai/_next/image?url=%2Flogos%2Facme-logo-light.png&w=32&q=75"
-                    alt="Author logo"
-                    className="w-5 h-5 rounded-full"
-                  />
-                  <span className="relative mr-23">EverythingTalent Team</span>
-                  <span className="text-gray-700 dark:text-gray-300">
+  <img
+    src="https://www.everythingtalent.ai/_next/image?url=%2Flogos%2Facme-logo-light.png&w=32&q=75"
+    alt="Author logo"
+    className="w-5 h-5 rounded-full"
+  />
+  
+  <span className="relative mr-23">
+    EverythingTalent Team
+  </span>
 
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                     width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-clock h-4 w-4 relative top-5 right-6"><polyline points="12 6 12 12 16 14"></polyline>
+  <span className="flex items-center gap-1 text-gray-700 dark:text-gray-300">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-clock"
+    >
+      <polyline points="12 6 12 12 16 14" />
+      <circle cx="12" cy="12" r="10" />
+    </svg>
+    {post.time}
+  </span>
+</p>
 
-                    <circle cx="12" cy="12" r="10"></circle>{post.time}
-                    </svg>
-                  </span>
-                </p>
-                <p className=" text-gray-700 dark:text-gray-400 mb-2 ml-2 text-2xl flex justify-between ">
-                  {post.date}
-                </p>
               </div>
             </div>
           </div>

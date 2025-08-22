@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Post from "./Post";
 
+
 const Featured = () => {
   const { theme } = useTheme();
   const [isDark, setIsDark] = useState(false);

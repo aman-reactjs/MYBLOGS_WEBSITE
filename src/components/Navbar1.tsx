@@ -5,6 +5,7 @@ import { ChevronRight } from 'lucide-react'
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button"
 
+
 const Navbar1 = () => {
   const { theme, setTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ const Navbar1 = () => {
     <nav className="w-full bg-transparent py-1 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         {/* Left Section */}
-        <div className="flex items-center justify-between w-full md:w-[600px] bg-[#ebedf0] dark:bg-[#0e1218] px-4 md:px-6 py-1 rounded-[12px] shadow border border-gray-400 dark:border-gray-700 border-2">
+        <div className="flex items-center justify-between w-full md:w-[600px] bg-[#ebedf0] dark:bg-[#0e1218] px-4 md:px-6 py-1 rounded-[12px] shadow border-gray-400 dark:border-gray-700 border-2">
           <div className="flex items-center space-x-6">
             {/* Logo */}
             <div className="pr-4 border-r border-gray-300 dark:border-gray-600">
