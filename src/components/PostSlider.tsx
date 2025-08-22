@@ -46,35 +46,44 @@ const PostSlider = () => {
   };
 
   return (
-    <div className="w-full px-4 sm:px-6 md:px-10 max-w-screen-xl mx-auto">
+    <div className="w-full h-full mx-auto">
       <Slider {...settings}>
         {posts.map((post, index) => (
           <div key={index} className="p-2 sm:p-4">
-            <div className="w-full h-full border-2 border-pink-300 bg-pink-100 rounded-2xl shadow-xl overflow-hidden">
-              <div className="flex flex-col-reverse md:flex-row rounded-2xl min-h-[70vh] overflow-hidden">
-                
-                {/* Left: Text Section with pink gradient */}
-                <div className="flex-1 flex items-center justify-center bg-[linear-gradient(to_right,#ffe4e6,transparent)] p-6 sm:p-10">
-                  <div className="space-y-6 max-w-2xl text-black text-center md:text-left">
-                    <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold leading-tight">
-                      {post.description}
-                    </h2>
-                    <p className="text-base sm:text-lg text-gray-700">
-                      {post.info}
-                    </p>
-                    <button className="bg-black text-white px-6 py-3 rounded-md text-sm font-semibold hover:bg-gray-900 transition-all duration-300 inline-flex items-center gap-2">
-                      Start for Free Today <span className="text-lg">→</span>
-                    </button>
+            {/* Gradient Border Wrapper */}
+            <div className="relative rounded-2xl p-[2px] bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-300 transition-all duration-300">
+              {/* Inner Card (light/dark) */}
+                {/* Inner Card (light/dark) */}
+             
+              <div className="bg-gray-100 dark:dark:bg-gradient-to-r from-[#1b0058] via-[#2a006d] to-[#0a155b] rounded-2xl overflow-hidden">
+                <div className="flex flex-col-reverse md:flex-row min-h-[80vh]">
+                  {/* Text Section */}
+                  <div className="flex-1 flex items-center justify-center bg-[linear-gradient(to_right,#ffe4e6,transparent)] dark:bg-[linear-gradient(to_right,#1f2937,transparent)] p-6 sm:p-10">
+                    <div className="space-y-6 max-w-2xl text-black dark:text-white text-center md:text-left">
+                      <h2 className="text-2xl sm:text-3xl lg:text-5xl font-[10px] leading-tight">
+                        {post.description}
+                      </h2>
+                      <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
+                        {post.info}
+                      </p>
+                      <div className="inline-block p-[2px] group rounded-lg hover:bg-gradient-to-r from-pink-500 via-purple-400 to-yellow-400">
+                 <button className="bg-black/80 shadow-lg text-white px-8 py-2 rounded-lg text-sm font-semibold transition-all duration-300 inline-flex items-center gap-2 backdrop-blur-lg ">
+                   Start for Free Today
+                   <span className="text-lg transform transition-transform duration-300 group-hover:translate-x-1">→</span>
+                 </button>
+               
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                {/* Right: Image Section with sky blue gradient */}
-                <div className="flex-1 relative h-[40vh] md:h-auto bg-[linear-gradient(to_left,#e0f2fe,transparent)] flex items-center justify-center p-4">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-contain md:object-cover rounded-xl"
-                  />
+                  {/* Image Section */}
+                  <div className="flex-1 relative h-[40vh] md:h-auto bg-[linear-gradient(to_left,#e0f2fe,transparent)] dark:bg-[linear-gradient(to_left,#111827,transparent)] flex items-center justify-center p-4">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-contain md:object-cover rounded-xl"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -86,3 +95,4 @@ const PostSlider = () => {
 };
 
 export default PostSlider;
+ 

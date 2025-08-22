@@ -88,21 +88,26 @@ const Footer = () => {
 </div> */}
       </div>
     </footer>
-     <div className="w-full flex justify-center bg-black py-4">
-        <img
-          src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
-          alt="Company Logo"
-          className="h-100 w-[100vw]"
-        />
-      </div>
+     <div className="w-full relative flex justify-center bg-black py-4 overflow-hidden">
+  {/* Background Image */}
+  <img
+    src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
+    alt="San Francisco Skyline"
+    className="w-full h-auto object-cover max-h-[350px]"
+  />
 
-      <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4 flex justify-center items-center bg-black text-white border-t-5 border-purple-950">
-        <aside>
-          <p>
-            Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd
-          </p>
-        </aside>
-      </footer>
+  {/* Transparent Black Layer */}
+  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60"></div>
+</div>
+
+<footer className="footer sm:footer-horizontal footer-center bg-black text-center text-white py-4 border-t-4 border-purple-950">
+  <aside>
+    <p>
+      © {new Date().getFullYear()} - Everything Talent Labs, LLC. All Rights Reserved.
+    </p>
+  </aside>
+</footer>
+
   </>
   
 };

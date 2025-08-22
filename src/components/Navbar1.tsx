@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowRight, Sun, Moon, Laptop, Menu } from "lucide-react";
+import { ChevronRight } from 'lucide-react'
 import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button"
 
 const Navbar1 = () => {
   const { theme, setTheme } = useTheme();
@@ -10,17 +12,17 @@ const Navbar1 = () => {
   const navLinks = ["Home", "Products", "Solutions", "Pricing", "Blog", "Support", "About"];
 
   return (
-    <nav className="w-full bg-transparent py-4 px-4">
+    <nav className="w-full bg-transparent py-1 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         {/* Left Section */}
-        <div className="flex items-center justify-between w-full md:w-[45vw] bg-[#ebedf0] dark:bg-[#0e1218] px-4 md:px-6 py-3 rounded-xl shadow border border-gray-400 dark:border-gray-700 border-2">
+        <div className="flex items-center justify-between w-full md:w-[600px] bg-[#ebedf0] dark:bg-[#0e1218] px-4 md:px-6 py-1 rounded-[12px] shadow border border-gray-400 dark:border-gray-700 border-2">
           <div className="flex items-center space-x-6">
             {/* Logo */}
             <div className="pr-4 border-r border-gray-300 dark:border-gray-600">
               <img
                 src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Facme-logo-dark.d4da7bf2.png&w=48&q=75"
                 alt="Logo"
-                className="h-6 w-auto"
+                className="h-9 w-auto"
               />
             </div>
 
@@ -51,48 +53,82 @@ const Navbar1 = () => {
         </div>
 
         {/* Right Side Buttons (Desktop Only) */}
-        <div className="hidden sm:flex justify-end items-center gap-2 w-full md:w-auto">
-          <button className="flex items-center text-sm px-4 py-2 rounded-xs border border-gray-300 dark:border-gray-600 shadow-sm hover:shadow transition bg-white dark:bg-gray-800 text-gray-700 dark:text-white hover:border-2 hover:border-pink-400">
-            Request a Demo <ArrowRight className="w-4 h-7 ml-1" />
-          </button>
-
+          <div className="hidden sm:flex justify-end items-start gap-4 w-full md:w-auto">
+      <div className="group p-[1px] rounded-md transition-all duration-300 bg-white/10 backdrop-blur-md border-1 border-white/10 shadow-md hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500 ">
+        <Button
+          variant="default"
+          className="w-full md:w-auto bg-white dark:bg-black text-gray-700 dark:text-white font-bold text-sm px-4 py-5 rounded-md shadow-lg group-hover:shadow dark:hover:bg-black transition-all duration-300 border-t-2 backdrop-blur-sm backdrop-filter fill-transparent"
+        >
+          Request a Demo
+          <ChevronRight className="w-7 h-10 relative top-0.5 size-0.5" />
+        </Button>
+      </div>
+         
           {/* Theme Toggle Dropdown */}
-          <div className="relative group">
-            <button className="p-2 border rounded-xs hover:shadow-sm transition dark:border-gray-600\ bg-white dark:bg-gray-800 text-gray-700 dark:text-white">
+          <ul>
+            <div className="relative group top-0.5">
+          <div className="p-[1px] rounded-md  bg-gray-300 shadow-lg transform  hover:shadow-md transition">
+            <Button
+              variant="outline"
+              className="w-14 h-11 font-bold bg-white dark:bg-gray-800 text-gray-500 dark:text-white rounded-md hover:bg-white dark:hover:bg-gray-800 hover:text-black relative "
+            >
               {theme === "light" ? (
-                <Sun className="w-10 h-7" />
+                <Sun className="w-5 h-5 " />
               ) : theme === "dark" ? (
-                <Moon className="w-10 h-7" />
+                <Moon className="w-5 h-5" />
               ) : (
-                <Laptop className="w-10 h-7" />
+                <Laptop className="w-5 h-5" />
               )}
-            </button>
-
-            <div className="absolute right-0  hidden group-hover:flex flex-col border rounded-lg shadow bg-white dark:bg-gray-800 text-sm w-32 z-10 overflow-hidden ">
-              <button
-                onClick={() => setTheme("light")}
-                className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-left  border-gray-200 mb-2 hover:border-2 hover:border-pink-400"
-              >
-                ☼ Light
-              </button>
-              <button
-                onClick={() => setTheme("dark")}
-                className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-left  border-gray-200 mb-2 hover:border-2 hover:border-pink-400"
-              >
-                ☽ Dark
-              </button>
-              <button
-                onClick={() => setTheme("system")}
-                className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-left  border-gray-200 mb-2 hover:border-2 hover:border-pink-400"
-              >
-                🖥️ System
-              </button>
-            </div>
+            </Button>
           </div>
 
-          <button className="flex items-center text-sm px-4 py-2 rounded-xs border border-gray-300 dark:border-gray-600 shadow-sm hover:shadow transition bg-white dark:bg-gray-800 text-gray-700 dark:text-white n hover:border-2 hover:border-pink-400">
-            Login <ArrowRight className="w-4 h-7 ml-1 " />
-          </button>
+          {/* Dropdown */}
+          <div className="absolute right-0 hidden group-hover:flex flex-col border rounded-lg shadow bg-white dark:bg-gray-800 text-sm w-32 z-10 overflow-hidden">
+           <div className="space-y-2">
+  <div className="group bg-transparent p-[2px] rounded-lg hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500 transition-all duration-300">
+    <button
+      onClick={() => setTheme("light")}
+      className="w-full px-4 py-2 bg-white dark:bg-black text-left rounded-lg group-hover:bg-white group-hover:dark:bg-black transition-all duration-300 "
+    >
+      ☼ Light
+    </button>
+  </div>
+
+  <div className="group bg-transparent p-[2px] rounded-lg hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500 transition-all duration-300">
+    <button
+      onClick={() => setTheme("dark")}
+      className="w-full px-4 py-2 bg-white dark:bg-black text-left rounded-lg group-hover:bg-white group-hover:dark:bg-black transition-all duration-300"
+    >
+      ☾ Dark
+    </button>
+  </div>
+
+  <div className="group bg-transparent p-[2px] rounded-lg hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500 transition-all duration-300">
+    <button
+      onClick={() => setTheme("system")}
+      className="w-full px-4 py-2 bg-white dark:bg-black text-left rounded-lg group-hover:bg-white group-hover:dark:bg-black transition-all duration-300"
+    >
+      🖥️ System
+    </button>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </ul>
+            
+      <div className="group p-[1px] rounded-md transition-all duration-300 bg-white/10 backdrop-blur-md border-1 border-white/10 shadow-md hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500 ">
+        <Button
+          variant="default"
+          className="w-full md:w-auto bg-white dark:bg-white text-gray-700 dark:text-black font-bold text-sm px-4 py-5 rounded-md shadow-lg group-hover:shadow  transition-all duration-300 border-t-2 backdrop-blur-sm backdrop-filter fill-transparent"
+        >
+        Login
+         <ArrowRight
+      className="w-4 h-4 ml-2 transform transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110"
+    />
+        </Button>
+      </div>
+         
         </div>
       </div>
 

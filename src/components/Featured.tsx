@@ -18,73 +18,81 @@ const Featured = () => {
         isDark ? "text-white" : "text-black"
       }`}
     >
-      {/* 🔳 Grid Background with Center Fade */}
-      <div
-        className={`absolute inset-0 -z-20 h-full w-full bg-[size:14px_24px] ${
-          isDark
-            ? "bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)]"
-            : "bg-[linear-gradient(to_right,#00000022_1px,transparent_1px),linear-gradient(to_bottom,#00000022_1px,transparent_1px)]"
-        } [mask-image:radial-gradient(ellipse_at_center,white,transparent)]`}
-      />
-
-      {/* 🌀 Decorative Curved Line */}
-      <div className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none">
-        <svg
-          viewBox="0 0 800 400"
-          fill="none"
-          className="absolute left-1/2 top-0 -translate-x-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[40%] h-auto"
-          xmlns="http://www.w3.org/2000/svg"
+      {/* 🔳 Grid + Glow Background */}
+      <div className="absolute inset-0 -z-20">
+        <div
+          className={`absolute inset-0 h-full w-full ${
+            isDark ? "bg-gradient-to-r from-[#1b0058] via-[#2a006d] to-[#0a155b] overflow-hidden" : "bg-white"
+          } bg-[linear-gradient(to_right,#88888822_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]`}
         >
-          <path
-            d="M0 0 C300 150, 500 150, 800 0"
-            stroke={isDark ? "#ffffff66" : "#00000044"}
-            strokeWidth="1.5"
-            fill="none"
-            strokeLinecap="round"
-          />
-        </svg>
+          <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]" />
+        </div>
+
+        <div className="absolute inset-0 pointer-events-none animate-fade-left bg-[radial-gradient(circle_at_left,rgba(240,46,170,0.2),transparent_70%)]" />
+        <div className="absolute inset-0 pointer-events-none animate-fade-right bg-[radial-gradient(circle_at_right,rgba(240,46,170,0.2),transparent_70%)]" />
       </div>
 
-      {/* 🌟 Main Content */}
-      <div className="relative z-20 flex flex-col items-center text-center px-4 sm:px-6 md:px-8 max-w-4xl">
-        {/* Icon + Label */}
+      {/* 🌫️ Top + Bottom Blur & Blend */}
+      {/* <div className="absolute top-10 left-50 w-full h-28 bg-gradient-to-b from-black/60 via-black/40 to-transparent backdrop-blur-md mix-blend-soft-light z-0 pointer-events-none" /> */}
+      <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-black/10 via-black/10 to-transparent backdrop-blur-md mix-blend-soft-light z-0 pointer-events-none" />
+
+      {/* 🌟 Content */}
+      <div className="w-full mt-40 relative z-10 flex flex-col items-center text-center px-4 sm:px-6 md:px-8 max-w-[1600px]">
+        {/* 🎯 Icon + Label */}
         <div className="relative mb-6">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-fuchsia-500 via-blue-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-purple-400/30 animate-pulse">
+          {/* 📐 Decorative Line Image */}
+          <div className="absolute -top-45 -right-40 w-[500px] h-[180px] z-10 pointer-events-none">
+            <img
+              src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcurve-line3.b1dd3166.png&w=768&q=75"
+              alt="decorative line"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          {/* 🔘 Icon */}
+          <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-pink-700 via-blue-700 to-yellow-500 flex items-center justify-center shadow-xl text-white border-[6px] border-white/70">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`h-6 w-6 ${isDark ? "text-white" : "text-black"}`}
-              fill="none"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
+              fill="none"
               stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-audio-lines-icon lucide-audio-lines"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 19V6m3 13V6m3 13V6"
-              />
+              <path d="M2 10v3" />
+              <path d="M6 6v11" />
+              <path d="M10 3v18" />
+              <path d="M14 8v7" />
+              <path d="M18 5v13" />
+              <path d="M22 10v3" />
             </svg>
           </div>
+
+          {/* 🏷️ Label */}
           <p
-            className={`text-xs sm:text-sm font-medium mt-2 px-3 py-1 rounded-lg shadow ${
+            className={`text-xs sm:text-sm font-medium mt-2 px-3 py-1 rounded-lg shadow relative right-7 ${
               isDark
-                ? "text-white bg-gradient-to-r from-[#1a093d] to-[#0f051d]"
-                : "text-black bg-gradient-to-r from-[#e0d7fa] to-[#e9e2f8]"
+                ? "text-white bg-gradient-to-r from-[#1a093d] to-[#dfdfe0]"
+                : "text-purple-500 bg-white"
             }`}
           >
             Featured Voices
           </p>
         </div>
 
-        {/* Title */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-2">
+        {/* 🏷️ Heading */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-2 relative right-8">
           Featured{" "}
           <span className="bg-gradient-to-r from-fuchsia-500 via-blue-500 to-yellow-400 text-transparent bg-clip-text">
             Blogs
           </span>
         </h2>
 
-        {/* Subtitle */}
+        {/* 📝 Subtitle */}
         <p
           className={`max-w-2xl text-sm sm:text-base md:text-lg mt-2 ${
             isDark ? "text-gray-300" : "text-gray-700"
@@ -93,9 +101,11 @@ const Featured = () => {
           Insights on AI hiring, machine learning in assessments, and next-gen recruitment.
         </p>
 
-        {/* Posts */}
-        <div className="mt-10 w-full">
-          <Post />
+        {/* 📰 Posts */}
+        <div className="mt-10 flex justify-center w-full">
+          <div className="w-full max-w-[1600px] px-4">
+            <Post />
+          </div>
         </div>
       </div>
     </section>
