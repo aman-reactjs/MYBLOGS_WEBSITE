@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 
 type Post = {
@@ -57,7 +57,7 @@ const posts: Post[] = [
   },
   {
     id: 7,
-    title: 'AI-Enhanced Candidate Screening in 2024: Revolutionizing Recruitment',
+    title: 'AI-Enhanced Candidate Screening in 2024:',
     time: "5 min read",
     image: 'https://www.everythingtalent.ai/_next/image?url=https%3A%2F%2Fsdmzyaxpsheauojrtsvy.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fadmin-blog%2Fai-enhanced-candidate.jpg&w=1400&q=75',
     date: "18 Feb 2025",
@@ -78,66 +78,69 @@ const posts: Post[] = [
   },
 ];
 
+
 const Posts: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <h1 className="text-4xl font-bold text-center mb-10">Latest Posts</h1>
+      {/* <h1 className="text-4xl font-bold text-center mb-10">Latest Posts</h1> */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {posts.map((post) => (
           <div
             key={post.id}
-            className="bg-gradient-to-br via-pink-500 from-purple-500 to-yellow-500 p-[2px] rounded-lg transition-all duration-300 hover:translate-y-1 transform hover:scale-101 cursor-pointer">
-            <div className="bg-white rounded-lg overflow-hidden h-full ">
+            className="group bg-gradient-to-br via-pink-500 from-purple-500 to-yellow-500 p-[2px] rounded-lg transition-all duration-300 hover:translate-y-1 transform hover:scale-[1.01] cursor-pointer"
+          >
+            <div className="bg-white rounded-lg overflow-hidden h-full">
               <Image
                 src={post.image}
                 alt={post.title}
-                 width="48"
-  height="48"
-                className="w-full h-60 object-cover "
+                width={1000}
+                height={1000}
+                className="w-full h-60 object-cover"
               />
-              <div className="  h-50 bg-[#DEE4E7] grid items-center justify-start text-start pl-3 pr-5 ">
-                <div className="font-bold text-sm mb-2 relative top-3 left-1 ">
-              <p className="bg-gradient-to-br from-purple-500 via-pink-500  to-yellow-500 bg-clip-text text-transparent font-bold">
-              AI
-              </p>
-             </div>
-                
-                <h2 className="text-2xl text-gray-800 font-semibold pr-2 hover:text-purple-500">
+              <div className="h-50 bg-[#DEE4E7] grid items-center justify-start text-start pl-3 pr-5">
+                <div className="font-bold text-sm mb-2 relative top-3 left-1">
+                  <p className="bg-gradient-to-br from-purple-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent font-bold">
+                    AI
+                  </p>
+                </div>
+
+                <h2 className="text-2xl text-gray-800 font-semibold pr-2 group-hover:text-purple-500 transition-colors duration-300">
                   {post.title}
                 </h2>
-                <p className="text-[15px] text-gray-500 dark:text-gray-300 mt-1 flex justify-between items-center">
-  <Image
-    src="https://www.everythingtalent.ai/_next/image?url=%2Flogos%2Facme-logo-light.png&w=32&q=75"
-    alt="Author logo"
-     width="48"
-     height="48"
-    className="w-5 h-5 rounded-full"
-  />
-  
-  <span className="relative mr-23 text-[13px]">
-    EverythingTalent Team
-  </span>
 
-  <span className="flex items-center gap-1 text-gray-700 dark:text-gray-300">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="lucide lucide-clock"
-    >
-      <polyline points="12 6 12 12 16 14" />
-      <circle cx="12" cy="12" r="10" />
-    </svg>
-    {post.time}
-  </span>
-</p>
-<p className='text-gray-700 text-[13px] my-5'>{post.date}</p>
+                <p className="text-[15px] text-gray-500 dark:text-gray-300 mt-1 flex justify-between items-center">
+                  <Image
+                    src="https://www.everythingtalent.ai/_next/image?url=%2Flogos%2Facme-logo-light.png&w=32&q=75"
+                    alt="Author logo"
+                    width={48}
+                    height={48}
+                    className="w-5 h-5 rounded-full"
+                  />
+
+                  <span className="relative mr-23 text-[13px]">
+                    EverythingTalent Team
+                  </span>
+
+                  <span className="flex items-center gap-1 text-gray-700 dark:text-gray-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-clock"
+                    >
+                      <polyline points="12 6 12 12 16 14" />
+                      <circle cx="12" cy="12" r="10" />
+                    </svg>
+                    {post.time}
+                  </span>
+                </p>
+                <p className="text-gray-700 text-[13px] my-5">{post.date}</p> 
               </div>
             </div>
           </div>
@@ -145,19 +148,19 @@ const Posts: React.FC = () => {
       </div>
 
       <div className="flex justify-center mt-10">
-  <div className="group p-[1px] rounded-md transition-all duration-300 bg-white/10 backdrop-blur-md border-1 border-white/10 shadow-md hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500">
-    <Button 
-      className="bg-black text-white font-bold rounded-[5px] w-36 h-11  transition-all duration-300 dark:bg-white dark:text-black dark:hover:bg-white hover:bg-black hover:text-white "
-      variant="outline"
-    >
-      Load More
-    </Button>
-  </div>
-</div>
-
-
+        <div className="group p-[1px] rounded-md transition-all duration-300 bg-white/10 backdrop-blur-md border border-white/10 shadow-md hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500">
+          <Button
+            className="bg-black text-white font-bold rounded-[5px] w-36 h-11 transition-all duration-300 dark:bg-white dark:text-black hover:bg-black hover:text-white"
+            variant="outline"
+          >
+            Load More
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default Posts;
+
+

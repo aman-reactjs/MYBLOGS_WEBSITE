@@ -43,17 +43,17 @@ const blogs: Blog[] = [
 
 const BlogCard: React.FC<{ blog: Blog }> = ({ blog }) => (
   <div className="p-[2px] rounded-xl bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-400 w-full max-w-xs hover:shadow-lg transition-shadow duration-300">
-    <div className="bg-[#DEE4E7] dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md overflow-hidden w-full">
-      <Image src={blog.image} alt={blog.title} className="w-full h-48 object-cover"  width="48"
-  height="48" />
+    <div className="group bg-[#DEE4E7] dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md overflow-hidden w-full">
+      <Image src={blog.image} alt={blog.title} className="w-full h-48 object-cover"  width="1000"
+  height="1000" />
       <div className="p-4 w-full dark:bg-gray-800 h-50 grid items-end">
         <div className="font-bold text-sm mb-2">
-          <p className="bg-gradient-to-r via-pink-500 from-purple-500 to-blue-500 bg-clip-text text-transparent font-bold relative right-33">
+          <p className="bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-50 bg-clip-text text-transparent font-bold relative right-33">
             AI
           </p>
         </div>
 
-        <h5 className="font-bold text-[18px] text-start text-gray-800 dark:text-white hover:text-purple-600 transition-colors duration-300">
+        <h5 className="font-bold text-[18px] text-start text-gray-800 dark:text-white group-hover:text-purple-600 transition-colors duration-300">
           {blog.title}
         </h5>
 
@@ -96,17 +96,17 @@ const NewsletterBox: React.FC = () => (
   <div className="relative rounded-[5px] p-6 text-start mx-auto mt-12 bg-[#DEE4E7] dark:bg-gray-900 shadow-md overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-4 w-5xl h-40">
     
     <div className="absolute -top-8 -left-8 w-32 h-32 bg-gradient-to-br from-purple-300 via-purple-100 to-transparent rounded-full opacity-40 blur-3xl"></div>
-    <Image className="relative top-15 right-8 opacity-70 size-13" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt=""  width="48"
-  height="48" />
+    <Image className="relative top-15 right-8 opacity-70 size-13" src="/newsLetterImage.png" alt=""  width="1000"
+  height="1000" />
     <h2 className="font-bold text-4xl z-10 relative text-gray-800 dark:text-white">
       Receive the latest Newsletter <span className="text-purple-600">updates.</span>
     </h2>
     <div className="flex items-center justify-center gap-2 relative z-10 w-full sm:w-auto">
-       <Image className="relative top-10 right-15 size-10 opacity-40" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt=""  width="48"
-  height="48"/>
+       <Image className="relative top-10 right-15 size-10 opacity-40" src="/newsLetterImage.png" alt=""  width="1000"
+  height="1000"/>
     <div className="relative w-full sm:w-94">
-      <Image className="relative bottom-6 size-13 left-90 opacity-35" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt=""  width="48"
-  height="48"/>
+      <Image className="relative bottom-6 size-13 left-90 opacity-35" src="/newsLetterImage.png"alt=""  width="1000"
+  height="1000"/>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -128,8 +128,8 @@ const NewsletterBox: React.FC = () => (
     placeholder="Enter your email"
     className="pl-14 pr-4 py-2 rounded-[7px] border-none bg-white dark:bg-gray-800 text-black dark:text-white w-full text-[17px]"
   />
-  <Image className="relative right-100 bottom-25 opacity-70 size-13" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt=""  width="48"
-  height="48"/>
+  <Image className="relative right-100 bottom-25 opacity-70 size-13" src="/newsLetterImage.png" alt=""  width="1000"
+  height="1000"/>
 </div>
 
 
@@ -161,7 +161,7 @@ const RecentBlog: React.FC = () => {
       {/* Header */}
       <div className="mb-10 relative z-10 flex flex-col items-center justify-center">
         <div className=" w-[1px] h-35 bg-gradient-to-b from-transparent via-purple-400 to-purple-500"></div>
-        <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-pink-700 via-blue-300 to-yellow-400 flex items-center justify-center shadow-xl text-white border-6 border-white/80">
+        <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-pink-700 via-blue-400 to-yellow-400 flex items-center justify-center shadow-xl text-black border-6 border-white/80">
           {/* ✅ Replaced icon here */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -180,7 +180,7 @@ const RecentBlog: React.FC = () => {
             <circle cx="5" cy="19" r="1" />
           </svg>
         </div>
-        <span className="mt-2 px-3 py-1 text-xs font-semibold text-purple-700 bg-gray-200 dark:bg-gray-700 dark:text-white rounded-full shadow-md">
+        <span className="mt-2 px-3 py-1 font-bold text-purple-400 bg-gray-100 dark:bg-gray-700 dark:text-white rounded-full shadow-md">
           Fresh Perspectives
         </span>
           <h2 className="text-2xl ml-20 sm:text-3xl md:text-4xl font-extrabold mb-2 relative right-8">

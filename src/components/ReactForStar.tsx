@@ -38,8 +38,8 @@ const ReachForStars = () => {
           <Image
             src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstarcomponentimg.e64c66e5.png&w=1400&q=75"
             alt="Astronaut"
-             width="48"
-             height="48"
+             width="1000"
+             height="1000"
             className="w-[200px] md:w-[250px]"
           />
         </div>

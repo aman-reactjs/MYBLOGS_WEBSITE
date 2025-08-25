@@ -36,9 +36,18 @@ const Featured = () => {
       </div>
 
       {/* 🌫️ Top + Bottom Blur & Blend */}
-      {/* <div className="absolute top-10 left-50 w-full h-28 bg-gradient-to-b from-black/60 via-black/40 to-transparent backdrop-blur-md mix-blend-soft-light z-0 pointer-events-none" /> */}
-      <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-black/10 via-black/10 to-transparent backdrop-blur-md mix-blend-soft-light z-0 pointer-events-none" />
+      <div className={`absolute top-0 left-0 w-full h-10 z-10 pointer-events-none 
+  ${isDark 
+    ? "bg-gradient-to-b from-[#0a155b] via-[#0a155b]/90 to-transparent" 
+    : "bg-gradient-to-b from-white via-white/90 to-transparent"}
+`} />
 
+{/* Bottom Blend */}
+<div className={`absolute bottom-0 left-0 w-full h-10 z-10 pointer-events-none 
+  ${isDark 
+    ? "bg-gradient-to-t from-[#0a155b] via-[#0a155b]/90 to-transparent" 
+    : "bg-gradient-to-t from-white via-white/90 to-transparent"}
+`} />
       {/* 🌟 Content */}
       <div className="w-full mt-40 relative z-10 flex flex-col items-center text-center px-4 sm:px-6 md:px-8 max-w-[1600px]">
         {/* 🎯 Icon + Label */}
@@ -49,14 +58,15 @@ const Featured = () => {
   src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcurve-line3.b1dd3166.png&w=768&q=75"
   alt="decorative line"
   className="w-full h-full object-contain"
-  width={768}
-  height={100}
+  width="1000"
+  height="1000"
+  
 />
 
           </div>
 
           {/* 🔘 Icon */}
-          <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-pink-700 via-blue-700 to-yellow-500 flex items-center justify-center shadow-xl text-white border-[6px] border-white/70">
+          <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-pink-700 via-blue-400 to-yellow-500 flex items-center justify-center shadow-xl text-white border-[6px] border-white/70 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -80,10 +90,10 @@ const Featured = () => {
 
           {/* 🏷️ Label */}
           <p
-            className={`text-xs sm:text-sm font-medium mt-2 px-3 py-1 rounded-lg shadow relative right-7 ${
+            className={`text-xs sm:text-sm mt-2 px-3 py-1 rounded-lg shadow relative right-7 font-bold ${
               isDark
-                ? "text-white bg-gradient-to-r from-[#1a093d] to-[#dfdfe0]"
-                : "text-purple-500 bg-white"
+                ? "text-white bg-gray-700"
+                : "text-purple-600 bg-gray-100"
             }`}
           >
             Featured Voices
@@ -93,7 +103,7 @@ const Featured = () => {
         {/* 🏷️ Heading */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-2 relative right-8">
           Featured{" "}
-          <span className="bg-gradient-to-r from-fuchsia-500 via-blue-500 to-yellow-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-fuchsia-500 via-blue-300 to-yellow-400 text-transparent bg-clip-text">
             Blogs
           </span>
         </h2>

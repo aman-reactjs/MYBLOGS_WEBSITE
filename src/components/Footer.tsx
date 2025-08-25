@@ -17,9 +17,9 @@ const Footer = () => {
           <Image
             src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Facme-logo-dark.d4da7bf2.png&w=256&q=75"
             alt="Everything Talent Logo"
-             width="48"
-             height="48"
-            className="h-30 mx-4 "
+             width="1000"
+             height="1000"
+            className="h-30 w-25 mx-4 "
           />
           {/* Brand Name */}
           <h2 className="text-xl font-semibold mb-2">Everything Talent</h2>
@@ -96,8 +96,8 @@ const Footer = () => {
   <Image
     src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
     alt="San Francisco Skyline"
-     width="48"
-    height="48"
+     width="1000"
+    height="1000"
     className="w-full h-auto object-cover max-h-[350px]"
   />
 
