@@ -4,6 +4,7 @@ import { ArrowRight, Sun, Moon, Laptop, Menu } from "lucide-react";
 import { ChevronRight } from 'lucide-react'
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button"
+import Image from "next/image";
 
 
 const Navbar1 = () => {
@@ -20,9 +21,11 @@ const Navbar1 = () => {
           <div className="flex items-center space-x-6">
             {/* Logo */}
             <div className="pr-4 border-r border-gray-300 dark:border-gray-600">
-              <img
+              <Image
                 src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Facme-logo-dark.d4da7bf2.png&w=48&q=75"
                 alt="Logo"
+                 width="48"
+                 height="48"
                 className="h-9 w-auto"
               />
             </div>

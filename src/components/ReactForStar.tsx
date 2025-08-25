@@ -1,13 +1,14 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef} from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, useAnimation } from "framer-motion";
-import { useInView } from "framer-motion";
+import { useInView } from "framer-motion"
+import Image from "next/image";
 
 const ReachForStars = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, threshold: 0.3 });
+  const inView = useInView(ref, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -34,9 +35,11 @@ const ReachForStars = () => {
       >
         {/* Left Image */}
         <div className="w-full md:w-[30%] flex justify-center items-center">
-          <img
+          <Image
             src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstarcomponentimg.e64c66e5.png&w=1400&q=75"
             alt="Astronaut"
+             width="48"
+             height="48"
             className="w-[200px] md:w-[250px]"
           />
         </div>

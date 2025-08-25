@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button"
+import Image from 'next/image';
 
 type Post = {
   id: number;
@@ -87,9 +88,11 @@ const Posts: React.FC = () => {
             key={post.id}
             className="bg-gradient-to-br via-pink-500 from-purple-500 to-yellow-500 p-[2px] rounded-lg transition-all duration-300 hover:translate-y-1 transform hover:scale-101 cursor-pointer">
             <div className="bg-white rounded-lg overflow-hidden h-full ">
-              <img
+              <Image
                 src={post.image}
                 alt={post.title}
+                 width="48"
+  height="48"
                 className="w-full h-60 object-cover "
               />
               <div className="  h-50 bg-[#DEE4E7] grid items-center justify-start text-start pl-3 pr-5 ">
@@ -103,9 +106,11 @@ const Posts: React.FC = () => {
                   {post.title}
                 </h2>
                 <p className="text-[15px] text-gray-500 dark:text-gray-300 mt-1 flex justify-between items-center">
-  <img
+  <Image
     src="https://www.everythingtalent.ai/_next/image?url=%2Flogos%2Facme-logo-light.png&w=32&q=75"
     alt="Author logo"
+     width="48"
+     height="48"
     className="w-5 h-5 rounded-full"
   />
   

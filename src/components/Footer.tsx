@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   FaTwitter,
   FaLinkedinIn,
@@ -13,9 +14,11 @@ const Footer = () => {
         {/* Left Section */}
         <div>
           {/* Logo */}
-          <img
+          <Image
             src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Facme-logo-dark.d4da7bf2.png&w=256&q=75"
             alt="Everything Talent Logo"
+             width="48"
+             height="48"
             className="h-30 mx-4 "
           />
           {/* Brand Name */}
@@ -90,9 +93,11 @@ const Footer = () => {
     </footer>
      <div className="w-full relative flex justify-center bg-black py-4 overflow-hidden">
   {/* Background Image */}
-  <img
+  <Image
     src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
     alt="San Francisco Skyline"
+     width="48"
+    height="48"
     className="w-full h-auto object-cover max-h-[350px]"
   />
 

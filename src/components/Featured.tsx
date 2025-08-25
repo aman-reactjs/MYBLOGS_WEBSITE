@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Post from "./Post";
+import Image from "next/image";
+
 
 
 const Featured = () => {
@@ -43,11 +45,14 @@ const Featured = () => {
         <div className="relative mb-6">
           {/* 📐 Decorative Line Image */}
           <div className="absolute -top-45 -right-40 w-[500px] h-[180px] z-10 pointer-events-none">
-            <img
-              src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcurve-line3.b1dd3166.png&w=768&q=75"
-              alt="decorative line"
-              className="w-full h-full object-contain"
-            />
+            <Image
+  src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcurve-line3.b1dd3166.png&w=768&q=75"
+  alt="decorative line"
+  className="w-full h-full object-contain"
+  width={768}
+  height={100}
+/>
+
           </div>
 
           {/* 🔘 Icon */}

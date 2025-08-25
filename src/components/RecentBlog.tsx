@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Image from "next/image";
 
 
 
@@ -43,7 +44,8 @@ const blogs: Blog[] = [
 const BlogCard: React.FC<{ blog: Blog }> = ({ blog }) => (
   <div className="p-[2px] rounded-xl bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-400 w-full max-w-xs hover:shadow-lg transition-shadow duration-300">
     <div className="bg-[#DEE4E7] dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md overflow-hidden w-full">
-      <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover" />
+      <Image src={blog.image} alt={blog.title} className="w-full h-48 object-cover"  width="48"
+  height="48" />
       <div className="p-4 w-full dark:bg-gray-800 h-50 grid items-end">
         <div className="font-bold text-sm mb-2">
           <p className="bg-gradient-to-r via-pink-500 from-purple-500 to-blue-500 bg-clip-text text-transparent font-bold relative right-33">
@@ -56,8 +58,9 @@ const BlogCard: React.FC<{ blog: Blog }> = ({ blog }) => (
         </h5>
 
         <p className="text-xs text-gray-500 dark:text-gray-300 mt-1 flex justify-between items-center">
-          <img
-            className="mt-3 mr-2 w-5 h-5"
+          <Image
+            className="mt-3 mr-2 w-5 h-5"  width="48"
+  height="48"
             src="https://www.everythingtalent.ai/_next/image?url=%2Flogos%2Facme-logo-light.png&w=32&q=75"
             alt="Author logo"
           />
@@ -93,14 +96,17 @@ const NewsletterBox: React.FC = () => (
   <div className="relative rounded-[5px] p-6 text-start mx-auto mt-12 bg-[#DEE4E7] dark:bg-gray-900 shadow-md overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-4 w-5xl h-40">
     
     <div className="absolute -top-8 -left-8 w-32 h-32 bg-gradient-to-br from-purple-300 via-purple-100 to-transparent rounded-full opacity-40 blur-3xl"></div>
-    <img className="relative top-15 right-8 opacity-70 size-13" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt="" />
+    <Image className="relative top-15 right-8 opacity-70 size-13" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt=""  width="48"
+  height="48" />
     <h2 className="font-bold text-4xl z-10 relative text-gray-800 dark:text-white">
       Receive the latest Newsletter <span className="text-purple-600">updates.</span>
     </h2>
     <div className="flex items-center justify-center gap-2 relative z-10 w-full sm:w-auto">
-       <img className="relative top-10 right-15 size-10 opacity-40" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt="" />
+       <Image className="relative top-10 right-15 size-10 opacity-40" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt=""  width="48"
+  height="48"/>
     <div className="relative w-full sm:w-94">
-      <img className="relative bottom-6 size-13 left-90 opacity-35" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt="" />
+      <Image className="relative bottom-6 size-13 left-90 opacity-35" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt=""  width="48"
+  height="48"/>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -122,7 +128,8 @@ const NewsletterBox: React.FC = () => (
     placeholder="Enter your email"
     className="pl-14 pr-4 py-2 rounded-[7px] border-none bg-white dark:bg-gray-800 text-black dark:text-white w-full text-[17px]"
   />
-  <img className="relative right-100 bottom-25 opacity-70 size-13" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt="" />
+  <Image className="relative right-100 bottom-25 opacity-70 size-13" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt=""  width="48"
+  height="48"/>
 </div>
 
 
