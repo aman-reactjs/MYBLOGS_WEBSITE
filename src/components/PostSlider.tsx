@@ -14,8 +14,7 @@ const posts = [
     title: "Post 2",
     description: "Revolutionize Your Recruitment Process",
     info: "Utilize advanced analytics and AI insights to make informed decisions and build high-performing teams",
-    image:
-      "https://media.istockphoto.com/id/1321462048/photo/digital-transformation-concept-system-engineering-binary-code-programming.jpg?s=612x612&w=0&k=20&c=Ib8RLw3_eCOo9N3YE4pvp9rcb_WmirjS-9x9R-vTd68=",
+    image: "", // this will now trigger the background
   },
   {
     title: "Post 3",
@@ -24,13 +23,7 @@ const posts = [
     image:
       "https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FHero%2Fhero3.png&w=1400&q=75",
   },
-  {
-    title: "Post 4",
-    description: "Enhance efficiency with intelligent tracking",
-    info: "Empower decisions with real-time data",
-    image:
-      "https://nextr.in/blog/wp-content/uploads/2023/09/Educational-Technology-1-1170x730.webp",
-  },
+  
 ];
 
 const PostSlider = () => {
@@ -46,42 +39,50 @@ const PostSlider = () => {
   };
 
   return (
-    <div className="w-full h-full mx-auto">
+    <div className="w-full h-full mx-auto max-w-7xl">
       <Slider {...settings}>
         {posts.map((post, index) => (
-          <div key={index} className="p-2 sm:p-4">
-            {/* Gradient Border Wrapper */}
-            <div className="relative rounded-2xl p-[2px] bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-300 transition-all duration-300">
-              {/* Inner Card (light/dark) */}
-              <div className="bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden">
-                <div className="flex flex-col-reverse md:flex-row min-h-[80vh]">
+          <div key={index} className="p-4">
+            <div className="relative flex flex-col lg:flex-row min-h-[33rem] rounded-2xl p-[2px] bg-gradient-to-r via-pink-500 from-purple-500 to-yellow-600 transition-all duration-300">
+              {/* Inner Card */}
+              <div className="bg-gray-100 dark:bg-gradient-to-r from-[#24013D] via-[#3B0D65] to-[#011E4C] rounded-2xl overflow-hidden w-full">
+                <div
+                  className={`flex flex-col lg:flex-row h-full  ${
+                    !post.image?.trim()
+                      ? "bg-[url('https://www.bluefin.com/wp-content/uploads/2020/08/ai-future.jpg')] bg-cover bg-center "
+                      : ""
+                  }`}
+                >
                   {/* Text Section */}
-                  <div className="flex-1 flex items-center justify-center bg-[linear-gradient(to_right,#ffe4e6,transparent)] dark:bg-[linear-gradient(to_right,#1f2937,transparent)] p-6 sm:p-10">
-                    <div className="space-y-6 max-w-2xl text-black dark:text-white text-center md:text-left">
-                      <h2 className="text-2xl sm:text-3xl lg:text-5xl font-[10px] leading-tight">
+                  <div className="w-full lg:w-1/2 flex items-center justify-center bg-[linear-gradient(to_right,#ffe4e6,transparent)] dark:bg-[linear-gradient(to_right,#1f2937,transparent)] p-6 sm:p-10">
+                    <div className="space-y-6 text-black dark:text-white text-center lg:text-left">
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
                         {post.description}
                       </h2>
                       <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
                         {post.info}
                       </p>
                       <div className="inline-block p-[2px] group rounded-lg hover:bg-gradient-to-r from-pink-500 via-purple-400 to-yellow-400">
-                 <button className="bg-black/80 shadow-lg text-white px-8 py-2 rounded-lg text-sm font-semibold transition-all duration-300 inline-flex items-center gap-2 backdrop-blur-lg ">
-                   Start for Free Today
-                   <span className="text-lg transform transition-transform duration-300 group-hover:translate-x-1">→</span>
-                 </button>
-               
+                        <button className="bg-black text-white px-8 py-2 rounded-lg text-sm font-semibold transition-all duration-300 inline-flex items-center gap-2">
+                          Start for Free Today
+                          <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
+                            →
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </div>
 
                   {/* Image Section */}
-                  <div className="flex-1 relative h-[40vh] md:h-auto bg-[linear-gradient(to_left,#e0f2fe,transparent)] dark:bg-[linear-gradient(to_left,#111827,transparent)] flex items-center justify-center p-4">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-contain md:object-cover rounded-xl"
-                    />
-                  </div>
+                  {post.image?.trim() && (
+                    <div className="w-full lg:w-1/2 relative h-64 top-22 sm:h-80 md:h-[28rem]  flex items-center justify-center p-2 ">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover rounded-xl"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -93,4 +94,6 @@ const PostSlider = () => {
 };
 
 export default PostSlider;
- 
+
+
+

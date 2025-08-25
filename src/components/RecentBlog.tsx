@@ -93,12 +93,14 @@ const NewsletterBox: React.FC = () => (
   <div className="relative rounded-[5px] p-6 text-start mx-auto mt-12 bg-[#DEE4E7] dark:bg-gray-900 shadow-md overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-4 w-5xl h-40">
     
     <div className="absolute -top-8 -left-8 w-32 h-32 bg-gradient-to-br from-purple-300 via-purple-100 to-transparent rounded-full opacity-40 blur-3xl"></div>
-    <h2 className="font-bold text-5xl z-10 relative text-gray-800 dark:text-white">
+    <img className="relative top-15 right-8 opacity-70 size-13" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt="" />
+    <h2 className="font-bold text-4xl z-10 relative text-gray-800 dark:text-white">
       Receive the latest Newsletter <span className="text-purple-600">updates.</span>
     </h2>
     <div className="flex items-center justify-center gap-2 relative z-10 w-full sm:w-auto">
-      
+       <img className="relative top-10 right-15 size-10 opacity-40" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt="" />
     <div className="relative w-full sm:w-94">
+      <img className="relative bottom-6 size-13 left-90 opacity-35" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt="" />
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -115,11 +117,12 @@ const NewsletterBox: React.FC = () => (
     <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
   </svg>
 
-  <input
+  <Input
     type="email"
     placeholder="Enter your email"
     className="pl-14 pr-4 py-2 rounded-[7px] border-none bg-white dark:bg-gray-800 text-black dark:text-white w-full text-[17px]"
   />
+  <img className="relative right-100 bottom-25 opacity-70 size-13" src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Fblog%2FMockImages%2Fdonut.png&w=64&q=75" alt="" />
 </div>
 
 
@@ -202,6 +205,7 @@ const RecentBlog: React.FC = () => {
       {/* Newsletter & CTA */}
       <NewsletterBox />
       {/* <CTABox /> */}
+     
     </section>
   );
 };

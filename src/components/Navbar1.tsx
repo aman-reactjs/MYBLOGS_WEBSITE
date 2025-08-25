@@ -57,8 +57,8 @@ const Navbar1 = () => {
           <div className="hidden sm:flex justify-end items-start gap-4 w-full md:w-auto">
       <div className="group p-[1px] rounded-md transition-all duration-300 bg-white/10 backdrop-blur-md border-1 border-white/10 shadow-md hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500 ">
         <Button
-          variant="default"
-          className="w-full md:w-auto bg-white dark:bg-black text-gray-700 dark:text-white font-bold text-sm px-4 py-5 rounded-md shadow-lg group-hover:shadow dark:hover:bg-black transition-all duration-300 border-t-2 backdrop-blur-sm backdrop-filter fill-transparent"
+          variant='outline'
+          className="w-full md:w-auto bg-white dark:bg-black text-gray-700 dark:text-white font-bold text-sm px-4 py-5 rounded-md shadow-lg group-hover:shadow  transition-all duration-300 border-t-2 backdrop-blur-sm backdrop-filter fill-transparent hover:dark:bg-black hover:dark:text-white"
         >
           Request a Demo
           <ChevronRight className="w-7 h-10 relative top-0.5 size-0.5" />
@@ -120,8 +120,8 @@ const Navbar1 = () => {
             
       <div className="group p-[1px] rounded-md transition-all duration-300 bg-white/10 backdrop-blur-md border-1 border-white/10 shadow-md hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500 ">
         <Button
-          variant="default"
-          className="w-full md:w-auto bg-white dark:bg-white text-gray-700 dark:text-black font-bold text-sm px-4 py-5 rounded-md shadow-lg group-hover:shadow  transition-all duration-300 border-t-2 backdrop-blur-sm backdrop-filter fill-transparent"
+          variant="outline"
+          className="w-full md:w-auto bg-white dark:bg-white text-gray-700 dark:text-black font-bold text-sm px-4 py-5 rounded-md shadow-lg group-hover:shadow  transition-all duration-300 border-t-2 backdrop-blur-sm backdrop-filter fill-transparent hover:dark:bg-black hover:dark:text-white"
         >
         Login
          <ArrowRight

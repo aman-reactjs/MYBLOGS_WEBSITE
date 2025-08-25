@@ -2,27 +2,30 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <>
-      <div className="m-10 mt-40 flex flex-col lg:flex-row justify-between items-center gap-5">
+    <div className="min-h-[25vh] flex justify-center items-center px-4">
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-6">
         {/* Search Input */}
-        <div className="navbar-start w-full lg:w-[35vw]">
+        <div className="w-full lg:w-[35vw]">
           <input
-            className="w-full h-10 pl-5 border border-gray-200 rounded"
+            className="w-full h-10 pl-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
             type="text"
             placeholder="Search blog posts..."
           />
         </div>
 
         {/* Category Buttons */}
-        <div className="navbar-center flex flex-wrap justify-center gap-4" style={{ color: '#D03DF8' }}>
-          <button className="border border-gray-200 hover:bg-gray-200 hover:text-black px-4 py-2 rounded">All</button>
-          <button className="border border-gray-200 hover:bg-gray-200 hover:text-black px-4 py-2 rounded">Recruitment</button>
-          <button className="border border-gray-200 hover:bg-gray-200 hover:text-black px-4 py-2 rounded">Youtube</button>
-          <button className="border border-gray-200 hover:bg-gray-200 hover:text-black px-4 py-2 rounded">ApplicantTrackingSystem</button>
-          <button className="border border-gray-200 hover:bg-gray-200 hover:text-black px-4 py-2 rounded">MachineLearning</button>
+        <div className="flex flex-wrap justify-center gap-3 text-[#D03DF8] mt-4 lg:mt-0">
+          {['All', 'Recruitment', 'Youtube', 'ApplicantTrackingSystem', 'MachineLearning'].map((item, index) => (
+            <button
+              key={index}
+              className="border border-gray-300 hover:bg-gray-200 hover:text-black px-4 py-2 rounded transition"
+            >
+              {item}
+            </button>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

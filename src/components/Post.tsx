@@ -85,7 +85,7 @@ const Posts: React.FC = () => {
         {posts.map((post) => (
           <div
             key={post.id}
-            className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 p-[2px] rounded-lg transition-all duration-300 hover:translate-y-1 transform hover:scale-101 cursor-pointer">
+            className="bg-gradient-to-br via-pink-500 from-purple-500 to-yellow-500 p-[2px] rounded-lg transition-all duration-300 hover:translate-y-1 transform hover:scale-101 cursor-pointer">
             <div className="bg-white rounded-lg overflow-hidden h-full ">
               <img
                 src={post.image}
@@ -94,7 +94,7 @@ const Posts: React.FC = () => {
               />
               <div className="  h-50 bg-[#DEE4E7] grid items-center justify-start text-start pl-3 pr-5 ">
                 <div className="font-bold text-sm mb-2 relative top-3 left-1 ">
-              <p className="bg-gradient-to-r via-pink-500 from-purple-500 to-blue-500 bg-clip-text text-transparent font-bold">
+              <p className="bg-gradient-to-br from-purple-500 via-pink-500  to-yellow-500 bg-clip-text text-transparent font-bold">
               AI
               </p>
              </div>
@@ -140,9 +140,9 @@ const Posts: React.FC = () => {
       </div>
 
       <div className="flex justify-center mt-10">
-  <div className="group p-[2px] rounded-[5px] bg-transparent hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500 transition-all duration-300">
+  <div className="group p-[1px] rounded-md transition-all duration-300 bg-white/10 backdrop-blur-md border-1 border-white/10 shadow-md hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-500">
     <Button 
-      className="bg-black text-white font-bold rounded-[5px] w-36 h-11  transition-all duration-300"
+      className="bg-black text-white font-bold rounded-[5px] w-36 h-11  transition-all duration-300 dark:bg-white dark:text-black dark:hover:bg-white hover:bg-black hover:text-white "
       variant="outline"
     >
       Load More
